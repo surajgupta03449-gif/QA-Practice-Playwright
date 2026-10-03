@@ -18,7 +18,7 @@ module.exports = defineConfig({
     baseURL: 'https://www.qapractice.com',
     headless: true,
     screenshot: 'on',
-    video: 'retain-on-failure',
+    video: 'on',
     trace: 'on-first-retry'
   },
   projects: [
