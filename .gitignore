@@ -5,3 +5,5 @@ blob-report/
 playwright/.cache/
 playwright/.auth/
 screenshots/*.png
+
+playwright-report/

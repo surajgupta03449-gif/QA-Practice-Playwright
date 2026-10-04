@@ -10,24 +10,34 @@ test('QA Practice - complete e-commerce checkout', async ({ page }) => {
   await shop.open();
 
   // Search for Wireless Mouse
-  await page.getByTestId('ecom-search').fill('mouse');
+  await page
+    .getByTestId('ecom-search')
+    .fill('mouse');
 
-  // Use the stable product locator instead of text
-  await expect(page.getByTestId('view-product-2')).toBeVisible();
+  // Verify Wireless Mouse
+  await expect(
+    page.getByTestId('view-product-2')
+  ).toBeVisible();
 
   // Select Electronics category
-  await page.getByTestId('ecom-category-electronics').click();
+  await page
+    .getByTestId('ecom-category-electronics')
+    .click();
 
   // Sort products by price
-  await page.getByTestId('ecom-sort').selectOption('price-asc');
+  await page
+    .getByTestId('ecom-sort')
+    .selectOption('price-asc');
 
   // Complete checkout
   await shop.checkout(data.ecommerce);
 
   // Verify successful order
-  await expect(page.getByTestId('ecom-order-success'))
-    .toContainText('Order Successful');
+  await expect(
+    page.getByTestId('ecom-order-success')
+  ).toContainText('Order Successful');
 
-  // Return to QA Practice home page
-  await page.goto('/');
+  // Return to home
+  await shop.goHome();
+
 });

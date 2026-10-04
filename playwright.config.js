@@ -23,7 +23,7 @@ module.exports = defineConfig({
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-    { name: 'webkit', use: { ...devices['Desktop Safari'] } }
+    { name: 'msedge', use: { ...devices['Desktop chrome'], channel: 'msedge' } },
+    //{ name: 'webkit', use: { ...devices['Desktop Safari'] } }
   ]
 });
